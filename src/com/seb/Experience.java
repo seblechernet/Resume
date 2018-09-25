@@ -1,5 +1,6 @@
 package com.seb;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class Experience {
@@ -7,9 +8,9 @@ public class Experience {
     private String companyName;
     private String fromDate;
     private String toDate;
-    private String duty;
+    ArrayList<String> duty;
 
-    public Experience(String position, String companyName, String fromDate, String toDate, String duty) {
+    public Experience(String position, String companyName, String fromDate, String toDate, ArrayList<String> duty) {
         Position = position;
         this.companyName = companyName;
         this.fromDate = fromDate;
@@ -36,10 +37,9 @@ public class Experience {
         return toDate;
     }
 
-    public String getDuty() {
+    public ArrayList<String> getDuty() {
         return duty;
     }
-
 
     public void setPosition(String position) {
         Position = position;
@@ -57,7 +57,8 @@ public class Experience {
         this.toDate = toDate;
     }
 
-    public void setDuty(String duty) {
+    public void setDuty(ArrayList<String> duty) {
         this.duty = duty;
     }
 }
+
