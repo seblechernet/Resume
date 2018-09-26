@@ -60,5 +60,8 @@ public class Experience {
     public void setDuty(ArrayList<String> duty) {
         this.duty = duty;
     }
+    public void addAduty(String aDuty){
+        this.duty.add(aDuty);
+    }
 }
 
