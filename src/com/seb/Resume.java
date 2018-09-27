@@ -62,10 +62,10 @@ public class Resume {
         String anyExperience = "";
 
         ArrayList<Experience> experiences = new ArrayList<Experience>();
-        ArrayList<String> duties=new ArrayList<String>();
+
         do {
             Experience exp = new Experience();
-
+            ArrayList<String> duties=new ArrayList<String>();
             System.out.println("Position:");
             String position = input.nextLine();
             System.out.println("Company Name:");
@@ -91,7 +91,7 @@ public class Resume {
                 count ++;
             }while(anyDuty.equalsIgnoreCase("yes"));
 
-            exp.setDuty(duties);
+             exp.setDuty(duties);
 
             experiences.add(exp);
             System.out.println("Do you have any other Experience? ");
@@ -130,26 +130,31 @@ public class Resume {
         } while (anySkills.equalsIgnoreCase("Yes"));
 
         System.out.println("======================================================================================");
+
+
         System.out.println(aperson.getName() + "\n" + aperson.getEmail() + "\n\n");
+
         System.out.println("Education");
         for (Education edu : educations) {
             System.out.println(edu.getField() + ",\n" + edu.getNameofschool() + "," + edu.getYearofgrad()+"\n");
         }
+
+
         System.out.println("Experience");
 
-        for(int i=1;i<=experiences.size();i++){
           for (Experience ex : experiences) {
               System.out.println(ex.getPosition() + "\n" + ex.getCompanyName() + "," + "From " + ex.getFromDate() +
                       "-" + ex.getToDate()) ;
-
-              for (String dut: duties){
-                  System.out.println("- " + dut);
+              for (String duty:ex.getDuty()){
+                  System.out.println("- " + duty);
               }
+
 
 
           }
 
-        }
+
+
         System.out.println("Skills");
         for (Skills sk : skills) {
             System.out.println(sk.getSkills() + "," + sk.getLevel());
