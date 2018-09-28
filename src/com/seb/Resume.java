@@ -64,8 +64,12 @@ public class Resume {
         ArrayList<Experience> experiences = new ArrayList<Experience>();
 
         do {
+// Create a new object called exp of class type Education
             Experience exp = new Experience();
+//  Create a new Array lis of String that holds list of duties for each experience
+
             ArrayList<String> duties=new ArrayList<String>();
+// Ask the user for inputs and set the variables to the new exp
             System.out.println("\nPosition:");
             String position = input.nextLine();
             System.out.println("\nCompany Name:");
@@ -78,13 +82,16 @@ public class Resume {
             exp.setCompanyName(companyName);
             exp.setFromDate(fromDate);
             exp.setToDate(toDate);
-            String anyDuty = "";
 
+// Ask the user for duties input and set it to the duty of the new exp
+// we need a loop because we may have more than duty for each exp
+            String anyDuty = "";
             int count=1;
             do{
 
                 System.out.println("\nDuty" + count+":");
                 String duty=input.nextLine();
+//Add each duty inserted to the duties ArrayList
                 duties.add(duty);
                 System.out.println("Any other Duties?");
                 anyDuty=input.nextLine();
@@ -92,7 +99,7 @@ public class Resume {
             }while(anyDuty.equalsIgnoreCase("yes"));
 
              exp.setDuty(duties);
-
+//Add the new exp to the Arralist experiences each time the loop runs
             experiences.add(exp);
             System.out.println("\nDo you have any other Experience? ");
             anyExperience = input.nextLine();
