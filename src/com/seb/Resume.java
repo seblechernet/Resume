@@ -24,7 +24,7 @@ public class Resume {
         aperson.setEmail(email);
 //Ask the user for educational background
 
-        System.out.println("Education\n ");
+        System.out.println("\nEducation\n ");
       //Declare a Sting variable anyEducation to use it in the condition for the do loop and initialize it to empty String,
      // if the user says yes for the question "do you have any other education achievement" then the loop continues
 
@@ -33,7 +33,7 @@ public class Resume {
 
         ArrayList<Education> educations = new ArrayList<Education>();
 
-        System.out.println("Education");
+
         do {
 // Create a new object called ed of class type Education
             Education ed = new Education();
@@ -58,7 +58,7 @@ public class Resume {
         } while (anyEducation.equalsIgnoreCase("Yes"));
 
 
-        System.out.println("Experience\n");
+        System.out.println("\nExperience");
         String anyExperience = "";
 
         ArrayList<Experience> experiences = new ArrayList<Experience>();
@@ -66,9 +66,9 @@ public class Resume {
         do {
             Experience exp = new Experience();
             ArrayList<String> duties=new ArrayList<String>();
-            System.out.println("Position:");
+            System.out.println("\nPosition:");
             String position = input.nextLine();
-            System.out.println("Company Name:");
+            System.out.println("\nCompany Name:");
             String companyName = input.nextLine();
             System.out.println("From Date:");
             String fromDate = input.nextLine();
@@ -83,7 +83,7 @@ public class Resume {
             int count=1;
             do{
 
-                System.out.println("Duty" + count+":");
+                System.out.println("\nDuty" + count+":");
                 String duty=input.nextLine();
                 duties.add(duty);
                 System.out.println("Any other Duties?");
@@ -94,7 +94,7 @@ public class Resume {
              exp.setDuty(duties);
 
             experiences.add(exp);
-            System.out.println("Do you have any other Experience? ");
+            System.out.println("\nDo you have any other Experience? ");
             anyExperience = input.nextLine();
 
         } while (anyExperience.equalsIgnoreCase("yes"));
@@ -102,7 +102,7 @@ public class Resume {
 //Declare a Sting variable anySkills to use it in the condition for the do loop and initialize it to empty String,
 // if the user says yes for the question "do you have any other Skills" then the loop continues
 
-        System.out.println("Skills\n ");
+        System.out.println("\nSkills\n ");
         String anySkills = "";
 
     //create a  new ArrayLis of the class type Skills called skills
@@ -125,14 +125,14 @@ public class Resume {
 
      // Ask the user if they have any other Education if yes the loop continues if no it will end
 
-            System.out.println("Any other Skills?");
+            System.out.println("\nAny other Skills?");
             anySkills = input.nextLine();
         } while (anySkills.equalsIgnoreCase("Yes"));
 
-        System.out.println("======================================================================================");
+        System.out.println("============================================================================================");
 
 
-        System.out.println(aperson.getName() + "\n" + aperson.getEmail() + "\n\n");
+        System.out.println(aperson.getName() + "\n" + aperson.getEmail() + "\n");
 
         System.out.println("Education");
         for (Education edu : educations) {
@@ -144,7 +144,7 @@ public class Resume {
 
           for (Experience ex : experiences) {
               System.out.println(ex.getPosition() + "\n" + ex.getCompanyName() + "," + "From " + ex.getFromDate() +
-                      "-" + ex.getToDate()) ;
+                      "\t-" + ex.getToDate()) ;
               for (String duty:ex.getDuty()){
                   System.out.println("- " + duty);
               }
